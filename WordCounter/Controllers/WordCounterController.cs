@@ -16,17 +16,17 @@ namespace WordCounter.Controllers
         return View();
     }
 
-    [HttpGet("/wordcounter/new")]
-    public ActionResult CreateForm()
-    {
-        return View();
-    }
-
     [HttpPost("/wordcounter")]
     public ActionResult Create(string userInputsentence, string userInputWord)
     {
         RepeatCounter myRepeatCounter = new RepeatCounter("test", "test");
         return RedirectToAction("Index");
+    }
+
+    [Route("/wordcounter/new")]
+    public ActionResult CreateForm()
+    {
+        return View();
     }
 
   }
