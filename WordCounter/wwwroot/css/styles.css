@@ -21,4 +21,8 @@ body {
   background: rgba(61, 58, 57, 0.75);
 }
 
+p a:link {
+  color: orange;
+}
+
 /*  */
