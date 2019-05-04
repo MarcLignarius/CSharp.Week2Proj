@@ -9,18 +9,16 @@ namespace WordCounter.Controllers
   {
 
     [HttpGet("/wordcounter")]
-    public ActionResult Index()
+    public ActionResult Index(RepeatCounter myRepeatCounter)
     {
-        // List<RepeatCounter> allWordCounts = RepeatCounter.GetAll();
-        // return View(allWordCounts);
-        return View();
+        return View(myRepeatCounter);
     }
 
     [HttpPost("/wordcounter")]
     public ActionResult Create(string userInputsentence, string userInputWord)
     {
-        RepeatCounter myRepeatCounter = new RepeatCounter("test", "test");
-        return RedirectToAction("Index");
+        RepeatCounter myRepeatCounter = new RepeatCounter(userInputsentence, userInputWord);
+        return View("Index", myRepeatCounter);
     }
 
     [Route("/wordcounter/new")]
