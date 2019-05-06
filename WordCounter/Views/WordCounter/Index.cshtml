@@ -14,7 +14,10 @@
       <h1>Word Counter</h1>
     </div>
     <div>
-      <p>@Model.AddWordMatches()</p>
+      <p>The word @Model.GetWord() appears @Model.AddWordMatches() times in the sentence:</p>
+      <br>
+      <p>@Model.GetSentence()</p>
+      <br>
       <a href="/wordcounter/new" class="btn btn-dark">Try again</a>
       <a href='/' class="btn btn-dark">Back to home</a>
     </div>
